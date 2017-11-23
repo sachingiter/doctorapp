@@ -1,0 +1,62 @@
+@import "../assets/animate/animate.scss";
+.animateApp{
+    .app-form{
+        @include fadeInUp(
+            $duration:1.5s,
+            $count: 1,
+            $delay: .3s,
+            $function: ease, 
+            $fill: both
+        ); 
+    }
+    .active-like{
+        ion-icon{
+            @include pulse(
+                $count: 1000000000
+            );
+        }
+    }
+    .search-list{
+        .app-icon{
+            @include fadeInLeft(
+                $duration: 1s,
+                $delay: .3s
+            );
+        }
+    }
+    .sub-list{
+        .item-md{
+            ion-thumbnail{
+                img{
+                    @include fadeInLeft(
+                        $duration: 1s,
+                        $delay: .3s
+                    );
+                }
+            }
+        }
+    }
+    .app-icon{
+        @include fadeInLeft(
+            $duration: 1s,
+            $delay: .3s
+        );
+    }
+    .showList{
+        @include fadeInLeft(
+            $duration: 1s,
+            $delay: .3s
+        );
+    }
+    .activescroll{
+        @include fadeIn(
+            $duration: 1s,
+            $delay: .4s
+        );
+    }
+    .more-info{
+        ion-fab{
+            @include zoomIn();
+        }
+    }
+}

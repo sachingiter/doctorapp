@@ -1,0 +1,37 @@
+page-register{
+    
+}
+
+.form-header{
+    &::after{
+        display: none;
+    }
+    .toolbar-background-md{
+        background: none;
+    }
+}
+
+.user-name{
+    display: flex;
+    .item-md{
+        width: 50%;
+        &:nth-of-type(1){
+            margin-right: 10px;
+        }    
+    }
+}
+
+.option-sign{
+    color: white;
+    margin-top: 30px;
+    p{
+        color: rgba(255,255,255,.7);
+        margin-bottom: 10px;
+    }
+    ion-grid{
+        width: 160px;
+        margin: 0 auto;
+        color: white;
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,52 @@
+<ion-header class="form-header">
+  <ion-navbar color="primary"></ion-navbar>
+</ion-header>
+
+<ion-content class="form-content" padding>
+  <div class="Loginpage">
+      <div class="formContainer">
+        <form  class="app-form" text-center>
+          <ion-list>
+            <div class="user-name">
+                 <ion-item no-padding no-lines>
+                  <ion-label floating>First name</ion-label>
+                  <ion-input type="text"></ion-input>
+                 </ion-item>
+
+                 <ion-item no-padding no-lines>
+                   <ion-label floating>Last name</ion-label>
+                   <ion-input type="text"></ion-input>
+                 </ion-item>
+             </div>
+            <ion-item no-padding no-lines>
+              <ion-label floating>Email</ion-label>
+              <ion-input type="email"></ion-input>
+            </ion-item>
+            <ion-item no-padding no-lines> 
+              <ion-label floating>Password</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item>
+          </ion-list>
+          <button ion-button block strong text-uppercase color="grayColor" (click)="goTo('Home')">create account</button>
+        </form>
+        <div class="loginFooter">
+          <div class="option-sign" text-center>
+            <p>Sign in with</p>
+            <ion-grid no-padding>
+              <ion-row padding-bottom>
+                <ion-col width-33>
+                  <i class="app-facebook-1"></i>
+                </ion-col>
+                <ion-col width-33>
+                  <i class="app-twitter"></i>
+                </ion-col>
+                <ion-col width-33>
+                  <i class="app-gplus"></i>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>  
+      </div>
+      </div>
+  </div>
+</ion-content>

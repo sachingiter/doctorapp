@@ -1,0 +1,131 @@
+<ion-header>
+
+  <ion-navbar color="primary" hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize>Find a Doctor</ion-title>
+    <ion-buttons class="toggle-btn" end>
+      <button ion-item icon-only no-padding no-lines>
+        <ion-toggle  (ionChange)="toggleshowbtn()" [(ngModel)]="showbtn" checked="true"></ion-toggle>
+      </button>
+    </ion-buttons> 
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+<ion-searchbar placeholder="Search Zip"
+  [(ngModel)]="zipCode"
+  [showCancelButton]="false"
+  (ionInput)="searchZip($event)"
+  [cancelButtonText]="Cancel"
+  type="number"
+  [limit-to]='6'
+
+  >
+</ion-searchbar>
+
+<button ion-button style="    position: absolute;
+    z-index: 999;
+    right: 10px;
+    top: 8px;
+    padding: 1px 15px 1px 15px;height: 27px;background-color: #204381;border-radius: 7px;">Search</button>
+ 
+  <!--section of map and scroll list-->
+  <div *ngIf="showbtn " #map id="map" style="height: calc(100vh - 86px);"></div>
+  <div *ngIf="showbtn&&showslider" [ngClass]="{'activescroll': showbtn }" class="home-detail">
+    <ion-scroll scrollX="true">
+
+     <!--  <ion-card class="app-card" *ngFor="let doctor of doctorList" padding  [ngClass]="{'activeslide': currentdoctor==item.id }"> -->
+      <ion-card class="app-card" *ngFor="let doctor of doctorList" padding >
+
+        <img (click)="goTo('Details')" src="assets/adam.jpg" />
+        <div class="card-det">
+          <h4 (click)="goTo('Details', doctor)" no-margin>{{doctor.provider}}</h4>
+          <p (click)="goTo('Details', doctor)" no-margin>{{doctor.providerDescription}}</p>
+          <div class="stars">
+            <ion-icon name="md-star"></ion-icon>
+            <ion-icon name="md-star"></ion-icon>
+            <ion-icon name="md-star"></ion-icon>
+            <ion-icon name="md-star"></ion-icon>
+            <ion-icon name="md-star-half"></ion-icon>
+            <p no-margin>{{doctor.providerReview}}</p>
+          </div>
+          <ion-item (click)="goTo('Details', doctor)" no-padding no-lines>
+            <ion-icon name="md-pin" mini item-start></ion-icon>
+            {{doctor.location}}
+          </ion-item>
+          <ion-grid no-padding>
+            <ion-row>
+              <ion-col col-6>
+
+                <!-- <button (click)="SaveDoctor(item)" *ngIf="!doctor.save" ion-button block>SAVE</button> -->
+                 <button (click)="goTo('Details', doctor)" ion-button block>VIEW</button>
+
+                <!-- <button (click)="SaveDoctor(item)" *ngIf="doctor.save" ion-button block>SAVED</button> -->
+
+                 <!-- <button (click)="SaveDoctor(item)" ion-button block>SAVED</button> -->
+
+              </ion-col>
+
+              <!-- <ion-col col-3 (click)="like(item)"> -->
+              <ion-col col-3 >
+
+               <!--  <ion-icon name="md-star" color="light" [ngClass]="{'activeLikeColor': item.activeLike }"></ion-icon> -->
+               <ion-icon name="md-star" color="light"></ion-icon>
+
+              </ion-col>
+              <ion-col col-3 (click)="presentshareModal()">
+                <ion-icon name="md-share" color="light"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-card>
+    </ion-scroll> 
+    <div style="text-align: center;"> <ion-icon name="close-circle"  style="font-size: 3.2em;margin: 0 auto" (click)="closeDoctorList()"></ion-icon> </div>
+  </div>
+
+
+  <!--section of list-->
+  <ion-list *ngIf="!showbtn" [ngClass]="{'showList':!showbtn}" class="main-list">
+    <ion-item class="list-item" *ngFor="let item of list" no-lines>
+      <ion-avatar (click)="goTo('Details', doctor)" item-start>
+        <img src="{{item.img}}">
+        <div class="stars">
+          <ion-icon name="md-star"></ion-icon>
+          <ion-icon name="md-star"></ion-icon>
+          <ion-icon name="md-star"></ion-icon>
+          <ion-icon name="md-star"></ion-icon>
+          <ion-icon name="md-star-half"></ion-icon>
+        </div>
+      </ion-avatar>
+      <div class="card-det">
+        <h4 (click)="goTo('Details')" no-margin>DR. John Smith</h4>
+        <p (click)="goTo('Details')" no-margin>Certified Dermatologist</p>
+        <ion-item no-padding no-lines>
+          <ion-icon name="md-pin" mini text-left item-start></ion-icon>
+          5 Avenue Anatole France, 75007 Paris, France
+        </ion-item>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-6>
+              <button (click)="SaveDoctor2(item)" *ngIf="!item.save2" ion-button block>SAVE</button>
+              <button (click)="SaveDoctor2(item)" *ngIf="item.save2" [ngClass]="{'saveColor':item.save2}" ion-button block>SAVED</button>
+            </ion-col>
+            <ion-col (click)="like2(item)" col-3>
+              <ion-icon name="md-star" color="grayColor" [ngClass]="{'activeLikeColor': item.activeLike2 }"></ion-icon>
+            </ion-col>
+            <ion-col col-3>
+              <ion-icon (click)="presentshareModal()" name="md-share" color="grayColor"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

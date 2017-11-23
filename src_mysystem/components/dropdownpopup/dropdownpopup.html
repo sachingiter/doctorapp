@@ -1,0 +1,22 @@
+<!-- Generated template for the DropdownpopupComponent component -->
+<div class="dropdown_pop">
+  <div class="d_Insurance" style="padding: 10px">
+    Select Your Dental Insurance
+  </div>
+  <ion-item>
+    <ion-label>Insurance</ion-label>
+    <ion-select interface="popover" [(ngModel)]="insurance" [disabled]="isSelectDisabled" (ionChange)="selectChange()">
+    <ion-option *ngFor="let data of insuranceList1" [value] ="data.insuranceID">{{data.insuranceName}}</ion-option>
+      <!-- <ion-option value="insurance 1">insurance 1</ion-option>
+      <ion-option value="insurance 2">insurance 2</ion-option> -->
+    </ion-select>
+  </ion-item>
+ 
+  <div class="chk_Insurance">
+  <input type="checkbox" [(ngModel)]="isChecked" [disabled]="isCheckBoxDisabled" (change)="checkBoxFun()" name="vehicle" value="Bike"> I do not currently have Dental Insurance<br>
+  </div>
+  <button class="pop_btn" (click)="dismiss()" ion-button icon-left>
+    <ion-icon name="eye"></ion-icon>
+     Now 
+    </button>
+</div>

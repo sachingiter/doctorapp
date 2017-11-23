@@ -1,0 +1,57 @@
+page-rate-modal {
+    width: 290px !important;
+    height: 200px !important;
+    top: calc(50% - (200px/2)) !important;
+    left: calc(50% - (290px/2)) !important;
+    @include box-shadow(1px,1px,20px,0,0.5);
+    .header-md{
+        &::after{
+            display: none;
+        }
+    }
+    .toolbar-background-md{
+        background: transparent !important;
+    }
+    .footer-md{
+        &::before{
+            display: none;
+        }
+    }
+    .toolbar-title-md{
+        font-weight: 500 !important;
+        font-size: 2.1rem;
+        color: black;
+    }
+    .button-clear-md{
+        font-size: 1.35rem;
+        color: #000;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .md .modal-wrapper > .ion-page > ion-header > .rate-head.toolbar.statusbar-padding:first-child{
+        padding-top: 4px;
+        min-height: 50px;
+    }
+}
+
+
+rating{
+    ul {
+        padding: 0;
+        margin: 10px 0;
+        text-align: center;
+        &.rating li {
+            padding: 5px 2px !important;
+            background: none;
+            color: color($colors,star);
+            ion-icon{
+                font-size: 4rem;
+                margin-right: 10px;
+            }
+            .ion-md-star-outline{
+                color: color($colors,grayColor);
+            }
+        }
+    }
+}

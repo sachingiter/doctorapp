@@ -1,0 +1,102 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize>Doctor</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="detail-head">
+    <img src="assets/img/det-img.png" />
+    <div class="more-info">
+      <ion-fab left>
+        <button (click)="saveDoctor()" class="add-btn" ion-fab>
+          <ion-icon name="add" *ngIf="!save"></ion-icon>
+          <ion-icon name="md-checkmark" *ngIf="save"></ion-icon>
+        </button>
+      </ion-fab>
+      <img src="assets/adam.jpg" />
+      <ion-fab right>
+        <button (click)="presentMapModal()" color="secondary" ion-fab><ion-icon name="md-map"></ion-icon></button>
+      </ion-fab>
+    </div>
+  </div>
+
+  <div class="detail" text-center padding>
+    <h4>{{doctorData.provider}}</h4>
+    <p class="det-info">Certified Dermatologist</p>
+     <span class="phone">
+      <ion-icon name="md-call"></ion-icon>
+      91234 56789
+    </span>
+    <p class="det-info">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like </p>
+   
+
+    <p class="month">
+     <ion-icon name="calendar"></ion-icon>
+      {{viewTitle}}
+    </p>
+<p>
+
+</p>
+     <calendar [eventSource]="eventSource"
+        [calendarMode]="calendar.mode"
+        [currentDate]="calendar.currentDate"
+        (onCurrentDateChanged)="onCurrentDateChanged($event)"
+        (onRangeChanged)="reloadSource(startTime, endTime)"
+        (onEventSelected)="onEventSelected($event)"
+        (onTitleChanged)="onViewTitleChanged($event)"
+        (onTimeSelected)="onTimeSelected($event)"
+        step="30">
+      </calendar>
+
+      
+
+    <ion-grid class="appointment-day" no-padding>
+      <ion-row>
+        <ion-col col-5>
+          <ion-item no-lines>
+            <ion-select>
+              <ion-option value="fst" [selected]="true">Tuesday</ion-option>
+              <ion-option value="Wednesday">Wednesday</ion-option>
+              <ion-option value="Thursday">Thursday</ion-option>
+              <ion-option value="Saturday">Saturday</ion-option>
+              <ion-option value="Sunday">Sunday</ion-option>
+              <ion-option value="Monday">Monday</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-7>
+          <p>9:00 AM - 7:00 PM</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="rate" padding text-left>
+      <h4>Rating</h4>
+      <ion-item no-padding no-lines>
+        <ion-avatar item-start>
+          <img src="assets/img/user-img.png">
+        </ion-avatar>
+        <h2>WendyVerdades <span>3 days ago</span></h2>
+        <div class="stars">
+          <ion-icon name="md-star"></ion-icon>
+          <ion-icon name="md-star"></ion-icon>
+          <ion-icon name="md-star"></ion-icon>
+          <ion-icon name="md-star"></ion-icon>
+          <ion-icon name="md-star-half"></ion-icon>
+          <p no-margin>4.6</p>
+        </div>
+        <p>Explains conditions & treatments</p>
+      </ion-item>
+      <button (click)="presentRateModal()" ion-button block text-capitalize color="primary">Rate This Doctor</button>
+    </div>
+  </div>
+
+</ion-content>

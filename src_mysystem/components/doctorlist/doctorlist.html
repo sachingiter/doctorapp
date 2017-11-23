@@ -1,0 +1,20 @@
+<!-- Generated template for the DoctorlistComponent component -->
+<!-- <ion-content> -->
+
+<div class="dropdown_pop">
+<span  style="position: absolute;right: -8px;top: 1px;padding: 0 10px;z-index: 99999;font-size: 20px;font-weight: 600"><button class="btn-stl" (click)="closePop()">X</button>
+</span>
+  <ion-content style="height: 200px">
+    <ion-list>
+      <ion-item *ngFor="let doctor of doctorList.provider"  (click)="checkDoctor(doctor)">
+        <ion-avatar item-start>
+          <img src="assets/adam.jpg">
+        </ion-avatar>
+        <h2> {{doctor.provider}} </h2>
+        <p>{{doctor.providerDescription}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</div>
+
+<!-- </ion-content> -->

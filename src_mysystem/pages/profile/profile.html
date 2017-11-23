@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle start>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize>profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card class="profile-card" color="twitter">
+      <img src="assets/img/user-img.png" />
+      <ion-card-content>
+        <h3>Justin Timberlake</h3>
+        <p>Justin Timberlake@yahoo.com</p>
+        <ion-fab right top>
+          <button (click)="changeData()" color="secondary" ion-fab>
+            <ion-icon name="md-create"  *ngIf="isDisabled"></ion-icon>
+            <ion-icon name="checkmark" *ngIf="!isDisabled" class="save_btn"></ion-icon>
+          </button>
+        </ion-fab>
+      </ion-card-content>
+
+    </ion-card>
+
+    <ion-list class="profile-form">
+      <ion-item no-padding>
+        <ion-icon name="md-person" color="secondary" item-left small></ion-icon>
+        <ion-input class="name-user" type="text" placeholder="Justin Timberlake" disabled="{{isDisabled}}"></ion-input>
+      </ion-item>
+        
+      <ion-item no-padding>
+        <ion-icon name="ios-mail" color="secondary" item-left small></ion-icon>
+        <ion-input type="email" placeholder="Justin Timberlake@yahoo.com" disabled="{{isDisabled}}"></ion-input>
+      </ion-item>
+
+      <ion-item no-padding>
+        <ion-icon name="md-lock" color="secondary" item-left small></ion-icon>
+        <ion-input type="password"  placeholder="************" disabled="{{isDisabled}}"></ion-input>
+      </ion-item>
+    </ion-list>
+
+</ion-content>

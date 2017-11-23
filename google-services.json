@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "918488842846",
+    "firebase_url": "https://equalmeshnew.firebaseio.com",
+    "project_id": "equalmeshnew",
+    "storage_bucket": "equalmeshnew.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918488842846:android:b59a7e0258109f48",
+        "android_client_info": {
+          "package_name": "com.equalmesh.equalmesh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918488842846-h26bq53q4shs66pq9chr05egtal8ftct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOy9OtwOGue8ukJN3rZuCUWTgSjeXbJyc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918488842846:android:764d2cb7da3280eb",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918488842846-h26bq53q4shs66pq9chr05egtal8ftct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOy9OtwOGue8ukJN3rZuCUWTgSjeXbJyc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

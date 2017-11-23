@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="header-clr text-wyt">Login</ion-title>
+   
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="form-content" padding>
+  <div class="Loginpage">
+      <div class="formContainer">
+
+        <form  class="app-form" text-center>
+          <ion-list>
+            <ion-item no-padding no-lines>
+              <ion-label floating>Email</ion-label>
+              <ion-input type="email"></ion-input>
+            </ion-item>
+            <ion-item no-padding no-lines> 
+              <ion-label floating>Password</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item>
+          </ion-list>
+          <button ion-button block strong text-uppercase color="grayColor" (click)="goToConfirm()">login</button>
+          <p class="bold" color="light" (click)="goTo('Register')">No account yet? Create one</p>
+        </form>
+
+      </div>
+  </div>
+</ion-content>

@@ -1,0 +1,46 @@
+<!--
+  Generated template for the FilterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="header-clr text-wyt">Confirm Appointment</ion-title>
+   
+  </ion-navbar>
+
+</ion-header>
+
+
+
+
+<ion-content padding>
+   <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/adam.jpg">
+        </ion-avatar>
+        <h2>{{doctorData.provider}}</h2>
+        <p>{{doctorData.providerDescription}}</p>
+      </ion-item>
+      <h3 style="text-align: center;">Selected Appointment</h3>
+      <h5 style="color: #204381;text-align: center;">{{doctorData.date}}</h5>
+      <h5 style="color: black;text-align: center;">At</h5>
+      <h5 style="color: #204381;text-align: center;">{{doctorData.time}}</h5>
+      <h5 style="color: black;text-align: center;">At</h5>
+      <h5 style="color: #204381;text-align: center;">{{place}}</h5>
+  <ion-grid style="position: fixed;
+    bottom: 0px;">
+  <ion-row>
+    <ion-col style="text-align: center;" (click)="closePop()">
+     <p class="set-backclr" ><ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back" style="font-size: 89px; color: red" ></ion-icon></p>
+
+    </ion-col>
+    <ion-col style="text-align: center;"  (click)="confirmAppoinment()">
+<p class="set-backclr"><ion-icon ios="ios-checkmark" md="md-checkmark" style="font-size: 89px;color: green"></ion-icon></p>
+
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+</ion-content>
